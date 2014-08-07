@@ -1,7 +1,7 @@
 class TwoPersonLap
   def initialize(language)
     @language = language
-    @topic = 'food and drink'
+    @topic = { theme: 'food and drink', prop: 'empty cup' }
   end
 
   attr_reader :language

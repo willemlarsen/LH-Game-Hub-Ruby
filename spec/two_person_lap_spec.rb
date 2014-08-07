@@ -14,7 +14,12 @@ describe TwoPersonLap do
 
   it 'has a default conversation topic' do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
-    expect(two_person_lap_test.topic).to eq('food and drink')
+    expect(two_person_lap_test.topic[:theme]).to eq('food and drink')
+  end
+
+  it 'has a default conversation prop' do
+    two_person_lap_test = TwoPersonLap.new('Hungarian')
+    expect(two_person_lap_test.topic[:prop]).to eq('empty cup')
   end
 end
 
