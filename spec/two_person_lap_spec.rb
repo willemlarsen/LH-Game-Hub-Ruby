@@ -21,5 +21,10 @@ describe TwoPersonLap do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
     expect(two_person_lap_test.topic[:prop]).to eq('empty cup')
   end
-end
 
+  it 'can set the question for the What? square' do
+    two_person_lap_test = TwoPersonLap.new('Hungarian')
+    two_person_lap_test.what[:question] = 'Mi ez?'
+    expect(two_person_lap_test.what[:question]).to eq('Mi ez?')
+  end
+end
