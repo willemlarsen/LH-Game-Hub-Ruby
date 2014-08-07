@@ -33,4 +33,10 @@ describe TwoPersonLap do
     two_person_lap_test.what[:answer] = 'Ez egy csésze?'
     expect(two_person_lap_test.what[:answer]).to eq('Ez egy csésze?')
   end
+
+  it 'can set the answer for the Who? square' do
+    two_person_lap_test = TwoPersonLap.new('Hungarian')
+    two_person_lap_test.who[:question] = 'Ez a csészém?'
+    expect(two_person_lap_test.who[:question]).to eq('Ez a csészém?')
+  end
 end
