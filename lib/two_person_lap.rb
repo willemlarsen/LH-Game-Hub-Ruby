@@ -1,0 +1,2 @@
+class TwoPersonLap
+end
