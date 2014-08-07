@@ -27,4 +27,10 @@ describe TwoPersonLap do
     two_person_lap_test.what[:question] = 'Mi ez?'
     expect(two_person_lap_test.what[:question]).to eq('Mi ez?')
   end
+
+  it 'can set the answer for the What? square' do
+    two_person_lap_test = TwoPersonLap.new('Hungarian')
+    two_person_lap_test.what[:answer] = 'Ez egy csésze?'
+    expect(two_person_lap_test.what[:answer]).to eq('Ez egy csésze?')
+  end
 end
