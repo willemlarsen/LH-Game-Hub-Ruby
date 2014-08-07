@@ -1,5 +1,6 @@
 require 'rspec'
 require 'two_person_lap'
+require 'question'
 
 describe TwoPersonLap do
   it 'creates a new instance of itself' do
@@ -24,25 +25,25 @@ describe TwoPersonLap do
 
   it 'can set the question for the What? square' do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
-    two_person_lap_test.what[:question] = 'Mi ez?'
-    expect(two_person_lap_test.what[:question]).to eq('Mi ez?')
+    two_person_lap_test.what.question = 'Mi ez?'
+    expect(two_person_lap_test.what.question).to eq('Mi ez?')
   end
 
   it 'can set the answer for the What? square' do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
-    two_person_lap_test.what[:answer] = 'Ez egy csésze?'
-    expect(two_person_lap_test.what[:answer]).to eq('Ez egy csésze?')
+    two_person_lap_test.what.answer = 'Ez egy csésze?'
+    expect(two_person_lap_test.what.answer).to eq('Ez egy csésze?')
   end
 
   it 'can set the answer for the Who? square' do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
-    two_person_lap_test.who[:question] = 'Ez a csészém?'
-    expect(two_person_lap_test.who[:question]).to eq('Ez a csészém?')
+    two_person_lap_test.who.question = 'Ez a csészém?'
+    expect(two_person_lap_test.who.question).to eq('Ez a csészém?')
   end
 
   it 'can set the answer for the What? square' do
     two_person_lap_test = TwoPersonLap.new('Hungarian')
-    two_person_lap_test.what[:answer] = 'Igen, az a czészéd.'
-    expect(two_person_lap_test.what[:answer]).to eq('Igen, az a czészéd.')
+    two_person_lap_test.what.answer = 'Igen, az a czészéd.'
+    expect(two_person_lap_test.what.answer).to eq('Igen, az a czészéd.')
   end
 end

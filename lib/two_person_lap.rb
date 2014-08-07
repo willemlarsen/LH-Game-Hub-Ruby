@@ -1,16 +1,18 @@
+require 'question'
+
 class TwoPersonLap
   def initialize(language)
     @language = language
     @topic = { theme: 'food and drink', prop: 'empty cup' }
-    @what = { question: '', answer: '' }
-    @who = { question: '', answer: '' }
+    @what = QuestionAndAnswer.new
+    @who = QuestionAndAnswer.new
   end
 
   attr_reader :language
 
-  attr_reader :topic
+  attr_accessor :topic
 
-  attr_reader :what
+  attr_accessor :what
 
-  attr_reader :who
+  attr_accessor :who
 end
