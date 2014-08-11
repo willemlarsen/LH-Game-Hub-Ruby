@@ -1,5 +1,5 @@
+require 'question_and_answer'
+
 class TwoPersonLap
-  def initialize
-  end
 end
 
