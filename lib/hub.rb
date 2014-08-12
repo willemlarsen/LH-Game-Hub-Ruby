@@ -2,6 +2,7 @@
 class Hub
   def initialize(attributes)
     @user = attributes[:user]
+    @language = attributes[:language]
     @exchanges = {}
   end
 
@@ -14,4 +15,6 @@ class Hub
   end
 
   attr_accessor :user
+
+  attr_accessor :language
 end
