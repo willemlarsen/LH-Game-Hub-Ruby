@@ -4,6 +4,8 @@ This Ruby program is designed to allow a user to create and manage conversation 
 
 Also see http://languagehunters.org.
 
+Thanks to Emmanuel Gaillot for pairing with me on a portion of this code.
+
 LH Game Hub  Copyright (C) 2014  Willem Larsen
 
     This program comes with ABSOLUTELY NO WARRANTY.
