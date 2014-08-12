@@ -1,6 +1,7 @@
 # A Hub records and retrieves exchanges for a given Lap
 class Hub
-  def initialize
+  def initialize(attributes)
+    @user = attributes[:user]
     @exchanges = {}
   end
 
@@ -11,4 +12,6 @@ class Hub
   def retrieve_exchange(question_word)
     @exchanges[question_word]
   end
+
+  attr_accessor :user
 end
