@@ -1,5 +1,5 @@
-# A Hub records and retrieves exchanges for a given Lap
-class Hub
+# A Lap records and retrieves exchanges for a given Lap
+class Lap
   def initialize(attributes)
     @user = attributes[:user]
     @language = attributes[:language]
