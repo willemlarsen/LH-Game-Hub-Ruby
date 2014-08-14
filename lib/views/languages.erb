@@ -1,0 +1,6 @@
+<h1>LANGUAGES</h1>
+<li>
+<% @languages.each do |l| %>
+<%= l.displayable_name(@user_language) %>
+<% end %>
+</li>

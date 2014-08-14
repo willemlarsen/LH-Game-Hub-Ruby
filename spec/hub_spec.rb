@@ -42,11 +42,15 @@ describe 'LH Game lap' do
     expect(lap.language).to eq('hungarian')
   end
 
-  it 'stores an audio file associated with' \
-     'a given question in an exchange' do
-    lap = Lap.new(user: 'willem', language: 'hungarian')
-    lap.record_exchange('what', 'Mi az?', 'Az egy csésze.')
-    lap.record_audio('what', 'question', 'what_question_audio.mpg')
-    expect(lap.play_audio('what', 'question')).to eq(what_question_audio)
-  end
+  # it 'stores an audio file associated with' \
+  #    'a given question in an exchange' do
+  #   lap = Lap.new(user: 'willem', language: 'hungarian')
+  #   lap.record_exchange('what', 'Mi az?', 'Az egy csésze.')
+  #   lap.connect_audio('what', 'question', 'what_question_audio.mpg')
+  #   expect(lap.play_audio(
+  #     'what', 'question'
+  #     )).to eq(
+  #      what_question_audio_file.mp3
+  #     )
+  # end
 end
