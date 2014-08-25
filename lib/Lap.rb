@@ -2,7 +2,16 @@
 
 class Lap
   def initialize
-    @question_squares = { 'what' => {}, 'who' => {} }
+    @question_squares = {
+      'what' => {},
+      'who' => {},
+      'where' => {},
+      'how many' => {},
+      'which' => {},
+      'when' => {},
+      'why' => {},
+      'how' => {}
+    }
   end
   def record_question(question_word, question_fragment)
     @question_squares[ question_word ][ :question ] = question_fragment

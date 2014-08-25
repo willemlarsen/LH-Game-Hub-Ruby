@@ -23,6 +23,11 @@ describe 'Lap' do
     test_lap.record_answer('who', 'Az egy csészem.')
     expect(test_lap.retrieve_answer('who')).to eq('Az egy csészem.')
   end
+  it 'remembers question and answer text for all the question exchanges' do
+    test_lap = Lap.new
+    test_lap.record_question('when', 'Mikor van ez?')
+    expect(test_lap.retrieve_question('when')).to eq('Mikor van ez?')
+  end
 end
 
 
