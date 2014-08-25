@@ -28,6 +28,13 @@ describe 'Lap' do
     test_lap.record_question('when', 'Mikor van ez?')
     expect(test_lap.retrieve_question('when')).to eq('Mikor van ez?')
   end
+  it 'remembers question and answer texts for exchanges for more than 1 lap' do
+    test_lap_one = Lap.new
+    test_lap_two = Lap.new
+    test_lap_one.record_question('when', 'Mikor van ez?')
+    test_lap_two.record_question('when', 'Most inni akarsz valamit?')
+    expect(test_lap_one.retrieve_question('when')).to_not eq(test_lap_two.retrieve_question('when'))
+  end
 end
 
 
