@@ -37,12 +37,13 @@ describe 'Lap' do
   end
 end
 
+
 # This is a fake class for testing
 
 class FakeTTSTranslator
   def grab_speech(text)
     file_name = URI.escape(text)
-    "#{file_name}.mp3"
+    "#{file_name}_test.mp3"
   end
 end
 
