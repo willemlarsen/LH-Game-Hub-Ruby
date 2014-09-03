@@ -1,3 +1,5 @@
+require './lib/lap'
+
 class FileSystemLapRepository
   def initialize(directory)
     @lap = Lap.new

@@ -35,6 +35,14 @@ describe 'Lap' do
     test_lap_two.record_question('when', 'Most inni akarsz valamit?')
     expect(test_lap_one.retrieve_question('when')).to_not eq(test_lap_two.retrieve_question('when'))
   end
+  it 'lists all the exchanges in a single lap' do
+    test_lap = Lap.new
+    test_lap.record_question('what', 'Mi ez?')
+    test_lap.record_answer('what', 'Ez egy csésze.')
+    test_lap.record_question('when', 'Mikor van ez?')
+    test_lap.record_answer('when', 'Kettö ora van.')
+    expect(test_lap.list_exchanges).to eq("WHAT: Mi ez? Ez egy csésze.\nWHEN: Mikor van ez? Kettö ora van.")
+  end
 end
 
 

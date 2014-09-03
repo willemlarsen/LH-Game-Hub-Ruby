@@ -33,4 +33,11 @@ class Lap
     tts_answer = FakeTTSTranslator.new.grab_speech(text)
     tts_answer
   end
+  def list_exchanges
+    pruned_question_words = @question_squares.select {|key, value| value.keys.length > 0 }
+    exchanges = pruned_question_words.map do |question_word, value|
+      "#{question_word.upcase}: #{retrieve_question(question_word)} #{retrieve_answer(question_word)}"
+    end
+    exchanges.join("\n")
+  end
 end
