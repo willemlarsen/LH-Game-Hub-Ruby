@@ -6,7 +6,7 @@ Also see http://languagehunters.org.
 
 For each square on the game board (What, Who, Where, How Many, Which, When, Why, How), the LH Game Hub stores and retrieves the game script and audio file for the language in play, so game leaders don't have to remember (or even know!) the target language.
 
-Thanks to Emmanuel Gaillot and Jay Bazuzi for pairing with me on this code.
+Thanks to Emmanuel Gaillot, rubyist Kirsten Comandich, and Jay Bazuzi for pairing with me on this code.
 
 LH Game Hub  Copyright (C) 2014  Willem Larsen
 
