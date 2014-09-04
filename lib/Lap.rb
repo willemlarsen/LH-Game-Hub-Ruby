@@ -1,5 +1,7 @@
 # A Lap records and retrieves exchanges for a given Lap
 
+# Exchange = Struct.new(:question, :answer)
+
 class Lap
   def initialize
     @question_squares = {
@@ -13,6 +15,9 @@ class Lap
       'how' => {}
     }
   end
+  # def record_exchange(question_word, question, answer)
+  #   @question_squares[ question_word ] = Exchange.new(question, answer)
+  # end
   def record_question(question_word, question_fragment)
     @question_squares[ question_word ][ :question ] = question_fragment
   end
