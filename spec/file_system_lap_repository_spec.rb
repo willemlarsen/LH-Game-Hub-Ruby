@@ -19,6 +19,14 @@ describe 'FileSystemLapRepository' do
     expect(whitespace_agnostic_exchanges).to include("HOW MANY: Hány csésze van? Egy csésze van.")
   end
 
+  it "populates the 'which' square with a test question and answer" do
+    expect(whitespace_agnostic_exchanges).to include("WHICH: Melyik csésze üres? Ez a csésze üres.")
+  end
+
+  it "populates the 'when' square with a test question and answer" do
+    expect(whitespace_agnostic_exchanges).to include("WHEN: Mikor van ez? Egy óra van.")
+  end
+
   let(:test_repository) {
     FileSystemLapRepository.new('test_data/lap_one')
   }

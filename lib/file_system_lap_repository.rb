@@ -8,6 +8,8 @@ class FileSystemLapRepository
     record_exchange('who')
     record_exchange('where')
     record_exchange('how many')
+    record_exchange('which')
+    record_exchange('when')
   end
 
   def lap
