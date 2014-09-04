@@ -12,7 +12,7 @@ class FileSystemLapRepository
   private
 
   def record_exchange(question_word)
-    @lap.record_question(question_word, File.read(directory + "/#{question_word}/question.txt"))
-    @lap.record_answer(question_word, File.read(directory + "/#{question_word}/answer.txt"))
+    lap.record_question(question_word, File.read(directory + "/#{question_word}/question.txt"))
+    lap.record_answer(question_word, File.read(directory + "/#{question_word}/answer.txt"))
   end
 end
