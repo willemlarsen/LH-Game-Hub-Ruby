@@ -31,6 +31,10 @@ describe 'FileSystemLapRepository' do
     expect(whitespace_agnostic_exchanges).to include("WHY: Neked miért van egy pohár vized? Mert én szomjas vagyok.")
   end
 
+  it "populates the 'how' square with a test question and answer" do
+    expect(whitespace_agnostic_exchanges).to include("HOW: Igyal! Hogyan van a viz? A viz hideg.")
+  end
+
   let(:test_repository) {
     FileSystemLapRepository.new('test_data/lap_one')
   }
