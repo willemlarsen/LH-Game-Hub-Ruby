@@ -8,7 +8,15 @@ describe 'FileSystemLapRepository' do
   end
 
   it 'populates the "who" square with a test question and answer' do
-    expect(whitespace_agnostic_exchanges).to include("WHO: Ez a csészém? Igen, az a czészéd.")
+    expect(whitespace_agnostic_exchanges).to include("WHO: Ez a csészém? Igen, az a csészéd.")
+  end
+
+  it "populates the 'where' square with a test question and answer" do
+    expect(whitespace_agnostic_exchanges).to include("WHERE: Hol van a csésze? A csésze itt van.")
+  end
+
+  it "populates the 'how many' square with a test question and answer" do
+    expect(whitespace_agnostic_exchanges).to include("HOW MANY: Hány csésze van? Egy csésze van.")
   end
 
   let(:test_repository) {

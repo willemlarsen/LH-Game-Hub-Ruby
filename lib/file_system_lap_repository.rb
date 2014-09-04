@@ -6,6 +6,8 @@ class FileSystemLapRepository
     @directory = directory
     record_exchange('what')
     record_exchange('who')
+    record_exchange('where')
+    record_exchange('how many')
   end
 
   def lap
