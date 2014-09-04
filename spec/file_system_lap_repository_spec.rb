@@ -3,9 +3,9 @@ require 'file_system_lap_repository'
 
 
 describe 'FileSystemLapRepository' do
-  it 'stuff' do
-   test_subject = FileSystemLapRepository.new('test_data/lap_one')
-   lap = test_subject.lap
-   expect(lap.retrieve_question('what')).to_not eq(nil)
+  it 'populates the "what" square with a test question and answer' do
+    test_repository = FileSystemLapRepository.new('test_data/lap_one')
+    test_lap = test_repository.lap
+    expect(test_lap.list_exchanges).to eq("WHAT:\n\tMi ez?\n\tEz egy csésze.\n")
   end
 end

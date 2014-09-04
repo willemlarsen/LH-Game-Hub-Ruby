@@ -41,7 +41,7 @@ describe 'Lap' do
     test_lap.record_answer('what', 'Ez egy csésze.')
     test_lap.record_question('when', 'Mikor van ez?')
     test_lap.record_answer('when', 'Kettö ora van.')
-    expect(test_lap.list_exchanges).to eq("WHAT: Mi ez? Ez egy csésze.\nWHEN: Mikor van ez? Kettö ora van.")
+    expect(test_lap.list_exchanges).to eq("WHAT:\n\tMi ez?\tEz egy csésze.\nWHEN:\n\tMikor van ez?\tKettö ora van.")
   end
 end
 
