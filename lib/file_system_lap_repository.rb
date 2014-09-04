@@ -10,6 +10,7 @@ class FileSystemLapRepository
     record_exchange('how many')
     record_exchange('which')
     record_exchange('when')
+    record_exchange('why')
   end
 
   def lap
