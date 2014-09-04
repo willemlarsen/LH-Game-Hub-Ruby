@@ -1,12 +1,15 @@
 require './lib/lap'
 
 class FileSystemLapRepository
-  attr_reader :lap, :directory
+  attr_reader :directory
   def initialize(directory)
-    @lap = Lap.new
     @directory = directory
     record_exchange('what')
     record_exchange('who')
+  end
+
+  def lap
+    @lap ||= Lap.new
   end
 
   private
