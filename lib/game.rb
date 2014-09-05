@@ -2,6 +2,7 @@ require './player.rb'
 
 class Game
   def self.create(path)
-    Player.new(FileSystemLapRepository.new(path))
+    @@repository = LapRepository.new(path)
+    Player.new(repository)
   end
 end

@@ -3,6 +3,7 @@
 # Exchange = Struct.new(:question, :answer)
 
 class Lap
+  attr_reader :question_squares
   def initialize
     @question_squares = {
       'what' => {},

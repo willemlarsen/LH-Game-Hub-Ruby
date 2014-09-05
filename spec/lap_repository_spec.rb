@@ -1,8 +1,8 @@
 require 'rspec'
-require 'file_system_lap_repository'
+require 'lap_repository'
 
 
-describe 'FileSystemLapRepository' do
+describe 'LapRepository' do
   it 'populates the "what" square with a test question and answer' do
     expect(whitespace_agnostic_exchanges).to include("WHAT: Mi ez? Ez egy csésze.")
   end
@@ -36,7 +36,7 @@ describe 'FileSystemLapRepository' do
   end
 
   let(:test_repository) {
-    FileSystemLapRepository.new('test_data/lap_one')
+    LapRepository.new('test_data/lap_one')
   }
 
   let(:whitespace_agnostic_exchanges) {
