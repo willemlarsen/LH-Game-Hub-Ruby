@@ -25,6 +25,9 @@ class Lap
   def retrieve_question(question_word)
     @question_squares[ question_word ][ :question ]
   end
+  def update_question(question_word, new_question_fragment)
+    @question_squares[ question_word ][ :question ] = new_question_fragment
+  end
   def record_answer(question_word, answer_fragment)
     @question_squares[ question_word ][ :answer ] = answer_fragment
   end

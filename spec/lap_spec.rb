@@ -43,6 +43,13 @@ describe 'Lap' do
     test_lap.record_answer('when', 'Kettö ora van.')
     expect(test_lap.list_exchanges).to eq("WHAT:\n\tMi ez?\tEz egy csésze.\nWHEN:\n\tMikor van ez?\tKettö ora van.")
   end
+
+  it 'updates question fragments for that lap according to user input' do
+    test_lap_one = Lap.new
+    test_lap_one.record_question('what', 'Mi ez?')
+    test_lap_one.update_question('what', 'Mi az?')
+    expect(test_lap_one.retrieve_question('what')).to eq('Mi az?')
+  end
 end
 
 
@@ -54,4 +61,3 @@ class FakeTTSTranslator
     "#{file_name}_test.mp3"
   end
 end
-

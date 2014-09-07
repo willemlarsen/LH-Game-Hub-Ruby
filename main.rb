@@ -28,7 +28,7 @@ def choose_question_square
       audio_choice_interface
     else
       exit
-    end
+  end
 end
 
 def audio_choice_interface
