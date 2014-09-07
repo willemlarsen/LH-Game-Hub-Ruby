@@ -34,6 +34,9 @@ class Lap
   def retrieve_answer(question_word)
     @question_squares[ question_word ][ :answer ]
   end
+  def update_answer(question_word, new_answer_fragment)
+    @question_squares[ question_word ][ :answer ] = new_answer_fragment
+  end
   def retrieve_text_to_speech_question(question_word)
     tts_question = FakeTTSTranslator.new.grab_speech(text)
     tts_question

@@ -50,6 +50,13 @@ describe 'Lap' do
     test_lap_one.update_question('what', 'Mi az?')
     expect(test_lap_one.retrieve_question('what')).to eq('Mi az?')
   end
+
+  it 'updates answer fragments for that lap according to user input' do
+    test_lap_one = Lap.new
+    test_lap_one.record_answer('what', 'Ez a csésze.')
+    test_lap_one.update_answer('what', 'Az a csésze.')
+    expect(test_lap_one.retrieve_answer('what')).to eq('Az a csésze.')
+  end
 end
 
 
