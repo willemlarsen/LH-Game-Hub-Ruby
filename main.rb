@@ -35,21 +35,25 @@ def audio_choice_interface
   puts "Press 'q' to play question audio, or 'a' to play answer, or any key to change squares, and hit enter."
 
   @audio_choice = gets.chomp.downcase
+  translator = TTSTranslator.new
 
   if @audio_choice == 'q'
-    text_to_speech = @current_game_repo.lap.question_squares[@square][:question]
-    formatted_text_to_speech = text_to_speech.gsub(" ", "+")
-    `wget -q -U Mozilla -O output.mp3 "http://translate.google.com/translate_tts?ie=UTF-8&tl=hu&q=#{formatted_text_to_speech}" ; afplay output.mp3 ; rm output.mp3`
+    translator.get_speech(@current_game_repo, @square, :question)
 
   elsif @audio_choice == 'a'
-    text_to_speech = @current_game_repo.lap.question_squares[@square][:answer]
-    formatted_text_to_speech = text_to_speech.gsub(" ", "+")
-    `wget -q -U Mozilla -O output.mp3 "http://translate.google.com/translate_tts?ie=UTF-8&tl=hu&q=#{formatted_text_to_speech}" ; afplay output.mp3 ; rm output.mp3`
+    translator.get_speech(@current_game_repo, @square, :answer)
   else
     choose_question_square
   end
   audio_choice_interface
 end
 
-introduce_game_hub
+class TTSTranslator
+  def get_speech(repo, square, question_or_answer)
+    text_to_speech = repo.lap.question_squares[square][question_or_answer]
+    formatted_text_to_speech = text_to_speech.gsub(" ", "+")
+    `wget -q -U Mozilla -O output.mp3 "http://translate.google.com/translate_tts?ie=UTF-8&tl=hu&q=#{formatted_text_to_speech}" ; afplay output.mp3 ; rm output.mp3`
+  end
+end
 
+introduce_game_hub
