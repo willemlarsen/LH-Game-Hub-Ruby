@@ -4,21 +4,39 @@ class LapRepository
   attr_reader :directory
   def initialize(directory)
     @directory = directory
-    record_exchanges
+    lap.question_squares.each do |square, _exchange|
+      Dir.mkdir(directory + '/' + square) unless Dir.exist?(directory + '/' + square)
+    end
+    load_exchanges
   end
 
   def lap
     @lap ||= Lap.new
   end
 
+  def save_lap
+    lap.question_squares.each do |square, _exchange|
+      File.open(directory + "/#{square}/question.txt", File::CREAT | File::TRUNC | File::WRONLY) do |file|
+        file.write(lap.retrieve_question(square))
+      end
+      File.open(directory + "/#{square}/answer.txt", File::CREAT | File::TRUNC | File::WRONLY) do |file|
+        file.write(lap.retrieve_answer(square))
+      end
+    end
+  end
+
   private
 
-  def record_exchanges
+  def load_exchanges
     lap.question_squares.each do |square, exchange|
-      question = File.read(directory + "/#{square}/question.txt")
-      answer   = File.read(directory + "/#{square}/answer.txt")
-      lap.record_question(square, question)
-      lap.record_answer(square, answer)
+      File.open(directory + "/#{square}/question.txt", File::CREAT | File::RDONLY) do |file|
+        question = file.read()
+        lap.record_question(square, question)
+      end
+      File.open(directory + "/#{square}/answer.txt", File::CREAT | File::RDONLY) do |file|
+        answer = file.read()
+        lap.record_answer(square, answer)
+      end
     end
   end
 end

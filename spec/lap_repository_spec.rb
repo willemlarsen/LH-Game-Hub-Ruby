@@ -1,5 +1,6 @@
 require 'rspec'
 require 'lap_repository'
+require 'lap'
 
 
 describe 'LapRepository' do
@@ -33,6 +34,16 @@ describe 'LapRepository' do
 
   it "populates the 'how' square with a test question and answer" do
     expect(whitespace_agnostic_exchanges).to include("HOW: Igyal! Hogyan van a viz? A viz hideg.")
+  end
+
+  it 'saves a lap' do
+    Dir.mkdir('test_data/test_lap') unless Dir.exists?('test_data/test_lap')
+    test_repository_two = LapRepository.new('test_data/test_lap')
+    test_repository_two.lap.record_question('what', 'Mi az?')
+    test_repository_two.save_lap
+    new_repo = LapRepository.new('test_data/test_lap')
+    expect(new_repo.lap.retrieve_question('what')).to eq('Mi az?')
+
   end
 
   let(:test_repository) {
