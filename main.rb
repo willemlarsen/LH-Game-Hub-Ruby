@@ -4,6 +4,7 @@ require './lib/lap.rb'
 require './lib/lap_repository.rb'
 
 def introduce_game_hub
+  # puts "\n"
   puts "Hello! Welcome to the Language Hunt Game Hub."
 
   @current_game_repo = LapRepository.new('test_data/lap_one')
