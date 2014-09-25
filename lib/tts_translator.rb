@@ -1,15 +1,17 @@
 require 'uri'
 require 'open-uri'
 
-class TTSTranslator
 
-  def grab_speech(question_word, exchange_fragment)
-    myfile = File.new("#{question_word}-#{exchange_fragment}.mp3", 'wb')
-    result_text = URI.escape(exchange_fragment)
-    open("https://translate.google.com/translate_tts?ie=UTF-8&q=#{result_text}&tl=hu") do |f|
-      myfile.write(f.read)
-    end
-    myfile.close
-    "#{question_word}-#{exchange_fragment}.mp3"
+class TTSTranslator
+  def self.get_speech(repo, square, question_or_answer)
+    text_to_speech = repo.lap.question_squares[square][question_or_answer]
+    formatted_text = text_to_speech.gsub(" ", "+")
+    play_audio(formatted_text)
   end
+
+  def self.play_audio(text)
+    url = "http://translate.google.com/translate_tts?ie=UTF-8&tl=hu&q="
+    `wget -q -U Mozilla -O output.mp3 "#{url}#{text}" ; afplay output.mp3 ; rm output.mp3`
+  end
+
 end
